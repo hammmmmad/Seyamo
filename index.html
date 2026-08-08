@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nurse Sarah | Premium Care App</title>
+    <title>Nurse Siamoi | Premium Care App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -65,18 +65,18 @@
             gap: 15px;
             position: fixed;
             top: 0; 
-            inset-inline-start: 0; /* در LTR چپ، در RTL راست */
+            inset-inline-start: 0;
             bottom: 0;
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-inline-end: 1px solid var(--glass-border); /* مرز درونی */
+            border-inline-end: 1px solid var(--glass-border);
             z-index: 100;
             transition: transform 0.4s ease;
         }
 
         .profile-brief { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding: 10px; }
-        .profile-brief img { width: 50px; height: 50px; bordep-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .profile-brief img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); flex-shrink: 0; }
         .profile-brief div { min-width: 0; }
         .profile-brief h3 { font-size: 1rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .profile-brief p { font-size: 0.8rem; color: var(--text-secondary); }
@@ -94,7 +94,7 @@
             border: none;
             font-family: inherit;
             font-size: 0.95rem;
-            text-align: start; /* ترازبندی خودکار بر اساس زبان */
+            text-align: start;
             width: 100%;
         }
         .nav-item i { font-size: 1.2rem; width: 25px; text-align: center; flex-shrink: 0; }
@@ -109,9 +109,9 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            margin-inline-start: 260px; /* فاصله خودکار بر اساس زبان */
+            margin-inline-start: 260px;
             padding: 30px;
-            padding-bottom: 100px; /* Space for bottom nav */
+            padding-bottom: 100px;
             overflow-y: auto;
             height: 100vh;
         }
@@ -156,7 +156,7 @@
         .stat-card i { 
             position: absolute; 
             top: -10px; 
-            inset-inline-end: -10px; /* جایگاه خودکار آیکون */
+            inset-inline-end: -10px;
             font-size: 4rem; 
             opacity: 0.1; 
             color: var(--accent-rose); 
@@ -198,7 +198,7 @@
         /* Bottom Nav (Mobile) */
         .bottom-nav {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            display: none; /* فقط در موبایل نمایش داده می‌شود */
+            display: none;
             gap: 5px; padding: 10px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -247,7 +247,7 @@
 
         /* Profile */
         .profile-header { text-align: center; margin-bottom: 30px; }
-        .profile-avatar-lg { width: 50p; height: 100px; border-radius: 50%; margin: 0 auto 15px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .profile-avatar-lg { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 15px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: block; }
         .skill-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; justify-content: center; }
         .chip { background: rgba(255,255,255,0.5); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; color: var(--accent-purple); font-weight: 600; }
 
@@ -267,7 +267,7 @@
             .main-content { margin-inline-start: 0; padding: 20px; padding-bottom: 100px; }
             .header-title h1 { font-size: 1.4rem; }
             .hero-section { flex-direction: column; text-align: center; gap: 20px; }
-            .bottom-nav { display: flex; } /* نمایش نوار پایین در موبایل */
+            .bottom-nav { display: flex; }
         }
     </style>
 </head>
@@ -286,7 +286,7 @@
             <div class="profile-brief">
                 <img src="seyamo.jpg" alt="Nurse Profile">
                 <div>
-                    <h3 data-key="nurse_name">Nurse Sarah</h3>
+                    <h3 data-key="nurse_name">Nurse Siamoi</h3>
                     <p data-key="nurse_role">Registered Nurse</p>
                 </div>
             </div>
@@ -329,7 +329,7 @@
             <section id="dashboard" class="view active">
                 <div class="hero-section glass-card">
                     <div class="hero-text">
-                        <h2 data-key="dash_welcome">Welcome back, Sarah!</h2>
+                        <h2 data-key="dash_welcome">Welcome back, Siamoi!</h2>
                         <p data-key="dash_welcome_desc">You have 2 shifts scheduled this week. Keep up the great work!</p>
                     </div>
                     <i class="fas fa-user-nurse hero-3d-icon"></i>
@@ -393,8 +393,8 @@
             <!-- View: Profile -->
             <section id="profile" class="view">
                 <div class="glass-card profile-header">
-                    <img src="seyamo.jpg"
-                        <h2 data-key="nurse_name">Nurse Siamoi </h2>
+                    <img src="seyamo.jpg" class="profile-avatar-lg" alt="Nurse Siamoi">
+                    <h2 data-key="nurse_name">Nurse Siamoi</h2>
                     <p data-key="nurse_role">Registered Nurse</p>
                     <div class="skill-chips">
                         <span class="chip" data-key="chip_1">ICU Specialist</span>
@@ -413,7 +413,7 @@
                     </div>
                     <div class="glass-card">
                         <h4 data-key="prof_contact">Contact</h4>
-                        <p style="color: var(--text-secondary); margin-top: 10px;">sarah.nurse@hospital.com</p>
+                        <p style="color: var(--text-secondary); margin-top: 10px;">siamoi.nurse@hospital.com</p>
                     </div>
                 </div>
             </section>
@@ -444,10 +444,10 @@
         const translations = {
             en: {
                 "nav_home": "Home", "nav_skills": "Skills", "nav_schedule": "Schedule", "nav_certs": "Certificates", "nav_patients": "Patients", "nav_profile": "Profile",
-                "nurse_name": "Nurse Sarah", "nurse_role": "Registered Nurse",
+                "nurse_name": "Nurse Siamoi", "nurse_role": "Registered Nurse",
                 "page_dashboard": "Dashboard", "page_skills": "My Skills", "page_schedule": "My Schedule", "page_certs": "Certificates", "page_patients": "Patient Care", "page_profile": "My Profile",
                 "date_today": "Today is Monday, 15 May",
-                "dash_welcome": "Welcome back, Sarah!", "dash_welcome_desc": "You have 2 shifts scheduled this week. Keep up the great work!",
+                "dash_welcome": "Welcome back, Siamoi!", "dash_welcome_desc": "You have 2 shifts scheduled this week. Keep up the great work!",
                 "stat_skills": "Specialized Skills", "stat_shifts": "This Week Shifts", "stat_reminders": "Important Reminders",
                 "quick_patient_care": "Patient Care Summary",
                 "sched_this_month": "May 2024", "shift_day": "Day Shift", "shift_night": "Night Shift",
@@ -458,10 +458,10 @@
             },
             fa: { 
                 "nav_home": "خانه", "nav_skills": "مهارت‌ها", "nav_schedule": "برنامه", "nav_certs": "تصدیق‌نامه‌ها", "nav_patients": "بیماران", "nav_profile": "پروفایل",
-                "nurse_name": "نرس سارا", "nurse_role": "نرس ثبت شده",
+                "nurse_name": "نرس سیامو", "nurse_role": "نرس ثبت شده",
                 "page_dashboard": "داشبورد", "page_skills": "مهارت‌های من", "page_schedule": "برنامه من", "page_certs": "تصدیق‌نامه‌ها", "page_patients": "مراقبت از بیمار", "page_profile": "پروفایل من",
                 "date_today": "امروز دوشنبه، ۲۵ ثور است",
-                "dash_welcome": "خوش آمدید سارا!", "dash_welcome_desc": "شما ۲ شیفت در این هفته برنامه دارید. کارتان عالی است!",
+                "dash_welcome": "خوش آمدید سیامو!", "dash_welcome_desc": "شما ۲ شیفت در این هفته برنامه دارید. کارتان عالی است!",
                 "stat_skills": "مهارت‌های تخصصی", "stat_shifts": "شیفت‌های این هفته", "stat_reminders": "یادآوری‌های مهم",
                 "quick_patient_care": "خلاصه مراقبت از بیمار",
                 "sched_this_month": "می ۲۰۲۴", "shift_day": "شیفت روز", "shift_night": "شیفت شب",
@@ -680,4 +680,4 @@
         renderSkills(); renderCertificates(); renderPatients(); renderCalendar();
     </script>
 </body>
-                                                                                                             </html>
+                            </html>
