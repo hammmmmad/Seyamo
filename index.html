@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دکتر سیاه مو | کلینیک تخصصی پرستاری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #b76e79;
+            --champagne: #f7e7ce;
+            --gold-metallic: #d4af37;
+            --deep-plum: #3a1a21;
+            --dark-velvet: #110a0d;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(183, 110, 121, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--dark-velvet);
+            color: var(--champagne);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* پس‌زمینه مخمل با نورپردازی حرفه‌ای */
+        .bg-velvet {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(183, 110, 121, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                var(--dark-velvet);
+        }
+
+        /* نوار ناوبری شیشه‌ای */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(17, 10, 13, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        /* جایگاه لوگو (Image) با قاب رزگلد */
+        .logo-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px solid var(--rose-gold);
+            box-shadow: 0 0 15px rgba(183, 110, 121, 0.5);
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .nav-brand:hover .logo-img {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .nav-brand h3 {
+            color: var(--champagne);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: var(--champagne);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rose-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--rose-gold); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* بخش اصلی و ساین 3D */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            perspective: 1200px; /* ایجاد عمق فضایی */
+            padding: 120px 20px 50px;
+        }
+
+        .hero-content {
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease-out;
+        }
+
+        /* ساین 3D لوکس و متالیک */
+        .sign-frame {
+            display: inline-block;
+            padding: 40px 70px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4));
+            border: 1px solid var(--rose-gold);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.5),
+                inset 0 0 20px rgba(183, 110, 121, 0.2);
+            transform-style: preserve-3d;
+            position: relative;
+            animation: floatSign 6s ease-in-out infinite;
+        }
+
+        @keyframes floatSign {
+            0%, 100% { transform: translateZ(0) translateY(0); }
+            50% { transform: translateZ(30px) translateY(-10px); }
+        }
+
+        .sign-text {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, var(--champagne) 0%, var(--rose-gold) 50%, var(--deep-plum) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* ایجاد عمق سه‌بعدی واقعی برای متن */
+            text-shadow: 
+                1px 1px 0 var(--deep-plum),
+                2px 2px 0 var(--deep-plum),
+                3px 3px 0 var(--deep-plum),
+                4px 4px 0 var(--deep-plum),
+                5px 5px 10px rgba(0,0,0,0.8);
+            transform: translateZ(50px);
+        }
+
+        .sign-sub {
+            color: var(--gold-metallic);
+            font-size: 1.4rem;
+            margin-top: 15px;
+            letter-spacing: 3px;
+            transform: translateZ(30px);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            color: rgba(247, 231, 206, 0.8);
+            font-size: 1.1rem;
+            margin-top: 40px;
+            transform: translateZ(20px);
+            line-height: 1.8;
+        }
+
+        /* دکمه سه‌بعدی حرفه‌ای */
+        .btn-3d {
+            margin-top: 40px;
+            background: linear-gradient(to bottom, var(--rose-gold), var(--deep-plum));
+            color: var(--champagne);
+            padding: 15px 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid var(--champagne);
+            display: inline-block;
+            transform: translateZ(60px);
+            box-shadow: 
+                0 5px 0 var(--deep-plum),
+                0 10px 20px rgba(0,0,0,0.5);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-3d:hover {
+            transform: translateZ(60px) translateY(-2px);
+            box-shadow: 0 7px 0 var(--deep-plum), 0 15px 30px rgba(183, 110, 121, 0.4);
+        }
+        .btn-3d:active {
+            transform: translateZ(60px) translateY(3px);
+            box-shadow: 0 2px 0 var(--deep-plum);
+        }
+
+        /* بخش خدمات با افکت Glassmorphism */
+        .section {
+            padding: 100px 8%;
+            text-align: center;
+            perspective: 1000px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--champagne);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--rose-gold), transparent);
+            margin: 15px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            transform-style: preserve-3d;
+        }
+
+        .card-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 231, 206, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .card-glass:hover::before {
+            left: 100%;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-10px) translateZ(50px);
+            border-color: var(--rose-gold);
+            box-shadow: 0 20px 40px rgba(183, 110, 121, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--rose-gold);
+            margin-bottom: 20px;
+            transform: translateZ(30px);
+            text-shadow: 0 0 15px rgba(183, 110, 121, 0.6);
+        }
+
+        .card-glass h3 {
+            color: var(--champagne);
+            margin-bottom: 15px;
+            transform: translateZ(20px);
+            font-weight: 700;
+        }
+
+        .card-glass p {
+            color: rgba(247, 231, 206, 0.7);
+            transform: translateZ(10px);
+            font-size: 0.95rem;
+        }
+
+        /* فوتر */
+        footer {
+            background: #080506;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
+        }
+        footer a { color: var(--champagne); margin: 0 10px; font-size: 1.5rem; transition: 0.3s; }
+        footer a:hover { color: var(--rose-gold); transform: translateY(-5px); }
+
+        /* انیمیشن ظاهر شدن */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .sign-text { font-size: 2rem; }
+            .sign-frame { padding: 25px 30px; }
+            .sign-sub { font-size: 1rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-velvet"></div>
+
+    <!-- ناوبری -->
+    <nav>
+        <a href="#home" class="nav-brand">
+            <!-- جای خالی لوگو با تگ img -->
+            <img src="images/seyamo" alt="Logo" class="logo-img">
+            <h3>دکتر سیاه مو</h3>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">خانه</a></li>
+            <li><a href="#services">خدمات تخصصی</a></li>
+            <li><a href="#contact">تماس</a></li>
+        </ul>
+    </nav>
+
+    <!-- بخش اصلی 3D -->
+    <section id="home" class="hero">
+        <div class="hero-content" id="heroContent">
+            <div class="sign-frame">
+                <div class="sign-text">پرستاری شفاخانه</div>
+                <div class="sign-sub">LUXURY NURSING CARE</div>
+            </div>
+            <p class="hero-desc">
+                مرکز تخصصی مراقبت‌های پرستاری با مدیریت دکتر سیاه مو. ما با ترکیب هنر مراقبت، دانش پزشکی روز و فضویی لوکس، تجربه‌ای بی‌نظیر از آرامش و سلامتی را برای شما و خانواده محترمتان رقم می‌زنیم.
+            </p>
+            <a href="#services" class="btn-3d">مشاهده خدمات تخصصی</a>
+        </div>
+    </section>
+
+    <!-- بخش خدمات -->
+    <section id="services" class="section">
+        <h2 class="section-title reveal">خدمات لاکچری پرستاری</h2>
+        <div class="services-grid">
+            <div class="card-glass reveal">
+                <i class="fas fa-user-nurse card-icon"></i>
+                <h3>مراقبت ویژه (VIP)</h3>
+                <p>ارائه خدمات پرستاری درجه یک در محیطی کاملاً اختصاصی و آرامش‌بخش برای بیماران نیازمند مراقبت ویژه.</p>
+            </div>
+            <div class="card-glass reveal">
+                <i class="fas fa-heart-pulse card-icon"></i>
+                <h3>پایش قلب و عروق</h3>
+                <p>کنترل لحظه‌ای علائم حیاتی، نوار قلب و پایش تخصصی وضعیت قلبی-عروقی با پیشرفته‌ترین دستگاه‌ها.</p>
+            </div>
+            <div class="card-glass reveal">
+                <i class="fas fa-syringe card-icon"></i>
+                <h3>سرم‌تراپی تخصصی</h3>
+                <p>انجام انواع تزریقات وریدی و عضلانی، ویتامین‌تراپی و سرم‌تراپی با رعایت کامل پروتکل‌های بهداشتی.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer id="contact">
+        <h3 style="color: var(--champagne); margin-bottom: 20px;">ارتباط با ما</h3>
+        <p style="color: rgba(247, 231, 206, 0.7);">آدری کابل افغانستان </p>
+        <p style="color: var(--rose-gold); margin-top: 10px;">شماره تماس 0000000000</p>
+        <div style="margin-top: 20px;">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // 1. افکت Parallax حرفه‌ای با موس
+        const heroContent = document.getElementById('heroContent');
+        const cards = document.querySelectorAll('.card-glass');
+
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            // محاسبه موقعیت موس از مرکز صفحه (بین 1 تا 1-)
+            const x = (clientX / window.innerWidth - 0.5) * 2;
+            const y = (clientY / window.innerHeight - 0.5) * 2;
+
+            // چرخش نرم بخش اصلی
+            if (heroContent) {
+                heroContent.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+            }
+        });
+
+        // 2. افکت تیلت (Tilt) برای کارت‌ها هنگام حرکت موس روی آن‌ها
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleX = (y - centerY) / 10;
+                const angleY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(30px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+        });
+
+        // 3. انیمیشن اسکرول (Scroll Reveal)
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(reveal => observer.observe(reveal));
+    </script>
+</body>
+</html>
